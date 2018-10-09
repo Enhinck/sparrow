@@ -1,0 +1,30 @@
+server:
+  port: 8765
+spring:
+  application:
+    name: sparrow-admin
+  profiles:
+    active: dev
+  boot:
+    discovery:
+      ignored-services: sparrow-config,sparrow-admin
+    admin:
+      notify:
+        mail:
+          to: huenbin@foxmail.com
+          from: enhinck@163.com
+  mail:
+    host: smtp.163.com
+    username: enhinck@163.com
+    password: HEBogg1234
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+management:
+  security:
+    enabled: false

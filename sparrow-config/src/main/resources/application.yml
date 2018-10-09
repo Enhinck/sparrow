@@ -1,0 +1,20 @@
+#服务端口
+server:
+  port: 8001
+
+#config服务自身配置
+spring:
+  profiles:
+    active: dev
+  #应用名称
+  application:
+    name: server-config
+  cloud:
+    config:
+      server:      
+        git:         
+          uri: http://gitlab.gtdreamlife.com/smartcommunity/configcenter.git
+          username: lvziqiang
+          password: 12345678
+          default-label: master
+          search-paths: '{application}'
