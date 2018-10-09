@@ -1,0 +1,42 @@
+spring:
+  profiles: 
+    active: dev
+  cloud:
+    #config服务配置
+    config:
+      username: admin
+      password: 123456
+      fail-fast: true
+      #重试间隔时间
+      retry:
+        initial-interval: 3000
+      #从注册中心获取配置服务，以及配置服务名称
+      discovery:
+        enabled: true
+        service-id: server-config
+  # mq消费者重试机制
+  rabbitmq:
+      listener:
+        simple:
+          retry:
+            max-attempts: 5
+            enabled: true
+            initial-interval: 5000
+# spring admin 访问无需验证
+management:
+   security:
+      enabled: false
+
+#请求和响应GZIP压缩支持
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
+  compression:
+    request:
+      enabled: true
+      mime-types: text/xml,application/xml,application/json
+      min-request-size: 2048
+    response:
+      enabled: true

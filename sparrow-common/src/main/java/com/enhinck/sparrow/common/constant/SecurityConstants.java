@@ -2,6 +2,10 @@ package com.enhinck.sparrow.common.constant;
 
 public interface SecurityConstants {
 	/**
+	 * 手机登录URL
+	 */
+	String MOBILE_TOKEN_URL = "/mobile/token";
+	/**
 	 * jwt签名
 	 */
 	String SIGN_KEY = "sparrow";

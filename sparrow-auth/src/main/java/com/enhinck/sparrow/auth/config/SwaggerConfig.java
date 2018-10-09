@@ -26,7 +26,7 @@ public class SwaggerConfig {
 	@Bean
 	public Docket postsApi() {
 		return new Docket(DocumentationType.SWAGGER_2).groupName(applicationName).apiInfo(apiInfo()).select()
-				.apis(RequestHandlerSelectors.basePackage("com.greentown.auth.controller")).paths(postPaths()).build();
+				.apis(RequestHandlerSelectors.basePackage("com.enhinck.sparrow.auth.controller")).paths(postPaths()).build();
 	}
 
 	private Predicate<String> postPaths() {
@@ -34,10 +34,10 @@ public class SwaggerConfig {
 	}
 
 	private ApiInfo apiInfo() {
-		return new ApiInfoBuilder().title("China Greentown API")
+		return new ApiInfoBuilder().title("sparrow API")
 				.description("spring cloud auth API reference for developers").termsOfServiceUrl("http://github.com")
-				.contact(new Contact("lvziqiang", "http://github.com", "lvziqiang@gtdreamlife.com"))
-				.license("Greentown Ideallife License").licenseUrl("ziqiang.lv@gmail.com").version("1.0").build();
+				.contact(new Contact("Enhinck", "http://github.com", "huenbin@foxmail.com"))
+				.license("Enhinck  License").licenseUrl("huenbin@foxmail.com").version("1.0").build();
 	}
 
 }
