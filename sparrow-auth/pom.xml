@@ -37,6 +37,8 @@
 			<artifactId>sparrow-common</artifactId>
 			<version>${sparrow.version}</version>
 		</dependency>
+		
+		
 	</dependencies>
 
 	<build>

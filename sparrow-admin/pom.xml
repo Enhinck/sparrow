@@ -14,7 +14,7 @@
 	<name>sparrow-admin</name>
 	<url>http://maven.apache.org</url>
 	<properties>
-		<boot.admin.version>1.5.7</boot.admin.version>
+		<boot.admin.version>1.5.6</boot.admin.version>
 	</properties>
 	<dependencies>
 		<dependency>

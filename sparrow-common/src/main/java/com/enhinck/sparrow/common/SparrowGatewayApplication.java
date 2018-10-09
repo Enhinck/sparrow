@@ -1,4 +1,4 @@
-package com.enhinck.sparrow.gateway;
+package com.enhinck.sparrow.common;
 
 
 import org.springframework.boot.SpringApplication;

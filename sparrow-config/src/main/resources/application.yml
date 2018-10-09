@@ -13,8 +13,12 @@ spring:
     config:
       server:      
         git:         
-          uri: http://gitlab.gtdreamlife.com/smartcommunity/configcenter.git
-          username: lvziqiang
-          password: 12345678
+          uri: https://github.com/Enhinck/sparrow-config.git
+          username: huenbin@foxmail.com
+          password: 12345
           default-label: master
           search-paths: '{application}'
+# spring admin 访问无需验证
+management:
+   security:
+      enabled: false

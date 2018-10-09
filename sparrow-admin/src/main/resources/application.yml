@@ -6,13 +6,13 @@ spring:
   profiles:
     active: dev
   boot:
-    discovery:
-      ignored-services: sparrow-config,sparrow-admin
     admin:
       notify:
         mail:
           to: huenbin@foxmail.com
           from: enhinck@163.com
+      discovery:
+        ignored-services: sparrow-config,sparrow-admin
   mail:
     host: smtp.163.com
     username: enhinck@163.com

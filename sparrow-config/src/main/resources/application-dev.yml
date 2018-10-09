@@ -1,14 +1,13 @@
 #配置config服务的账号密码
-spring:
- security:
+security:
   user:
-    name: sparrow
+    name: admin
     password: 123456
 
 #注册中心配置
 eureka:
   auth:
-    user: sparrow
+    user: admin
     password: 123456
   client:
     service-url:
