@@ -21,6 +21,12 @@
 			<artifactId>spring-cloud-starter-config</artifactId>
 		</dependency>
 		
+		<dependency>
+			<groupId>de.codecentric</groupId>
+			<artifactId>spring-boot-admin-starter-client</artifactId>
+			<version>${boot.admin.version}</version>
+		</dependency>
+		
 			<!-- 通用mapper -->
 		<dependency>
 			<groupId>tk.mybatis</groupId>

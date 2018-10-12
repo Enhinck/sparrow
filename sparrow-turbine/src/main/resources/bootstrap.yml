@@ -1,0 +1,10 @@
+server:
+  port: 8764
+management:
+  security:
+    enabled: false
+spring:
+  application:
+    name: sparrow-turbine
+  profiles:
+    active: dev

@@ -41,3 +41,6 @@ endpoints:
    # 跨域允许方法
    cors:
       allowed-methods: HEAD,GET,POST
+
+      
+      

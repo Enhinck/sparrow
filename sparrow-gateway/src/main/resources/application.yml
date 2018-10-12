@@ -25,6 +25,9 @@ zuul:
     auth:
       path: /auth/**
       serviceId: sparrow-auth
+    biz:
+      path: /biz/**
+      serviceId: sparrow-biz-demo
       
 ribbon:
   eureka:

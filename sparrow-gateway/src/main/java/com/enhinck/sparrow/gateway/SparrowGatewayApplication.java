@@ -22,7 +22,6 @@ import com.enhinck.sparrow.common.redis.FastJsonRedisSerializer;
 
 @SpringBootApplication(exclude={DataSourceAutoConfiguration.class,HibernateJpaAutoConfiguration.class})
 @EnableDiscoveryClient
-@EnableFeignClients({ "com.greentown.gateway.feign" })
 @EnableZuulProxy
 @ImportResource({"classpath*:applicationContext.xml"})
 @EnableScheduling

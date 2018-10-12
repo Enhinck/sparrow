@@ -7,7 +7,7 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>java:com.enhinck.sparrow.common.SparrowGatewayApplication</config>
+		<config>java:com.enhinck.sparrow.turbine.SparrowGatewayApplication</config>
 	</configs>
 	<autoconfigs>
 	</autoconfigs>

@@ -15,11 +15,7 @@ import com.netflix.zuul.context.RequestContext;
 import cn.hutool.core.collection.CollectionUtil;
 import lombok.extern.slf4j.Slf4j;
 
-/**
- * 
- * @author lvziqiang
- *
- */
+
 @Component
 @Slf4j
 public class AdminAccessFilter extends ZuulFilter {

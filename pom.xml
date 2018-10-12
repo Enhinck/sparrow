@@ -21,6 +21,7 @@
 		<sparrow.version>1.0.0</sparrow.version>
 		<spring-boot.version>1.5.13.RELEASE</spring-boot.version>
 		<spring-cloud.version>Edgware.SR2</spring-cloud.version>
+		<boot.admin.version>1.5.6</boot.admin.version>
 	</properties>
 
 	<!--公共依赖 -->
