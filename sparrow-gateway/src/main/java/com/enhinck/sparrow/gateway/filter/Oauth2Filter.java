@@ -30,9 +30,9 @@ import lombok.extern.slf4j.Slf4j;
  * @author hueb security.validate.code.enabled 默认 为false，开启需要设置为true
  */
 @Slf4j
-@RefreshScope
-@Configuration("Oauth2Filter")
-//@ConditionalOnProperty(value = "security.validate.code", havingValue = "true")
+//@RefreshScope
+//@Configuration("Oauth2Filter")
+//@ConditionalOnProperty(value = "security.validate.code", havingValue = "false")
 public class Oauth2Filter extends ZuulFilter {
 
 	@Autowired

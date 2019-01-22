@@ -134,5 +134,8 @@
 		<module>sparrow-gateway</module>
 		<module>sparrow-admin</module>
 		<module>sparrow-zipkin</module>
+		<module>sparrow-turbine</module>
+		<module>sparrow-biz-demo</module>
+		<module>sparrow-proxy-demo</module>
 	</modules>
 </project>

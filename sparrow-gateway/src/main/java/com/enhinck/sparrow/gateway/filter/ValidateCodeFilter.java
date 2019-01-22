@@ -32,9 +32,9 @@ import lombok.extern.slf4j.Slf4j;
  * security.validate.code.enabled 默认 为false，开启需要设置为true
  */
 @Slf4j
-@RefreshScope
-@Configuration("validateCodeFilter")
-@ConditionalOnProperty(value = "security.validate.code", havingValue = "true")
+//@RefreshScope
+//@Configuration("validateCodeFilter")
+//@ConditionalOnProperty(value = "security.validate.code", havingValue = "false")
 public class ValidateCodeFilter extends ZuulFilter {
     private static final String EXPIRED_CAPTCHA_ERROR = "验证码已过期，请重新获取";
 

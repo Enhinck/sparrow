@@ -1,0 +1,4 @@
+proxy:
+    solr:
+        servlet_url: /test/*
+        target_url: http://www.baidu.com

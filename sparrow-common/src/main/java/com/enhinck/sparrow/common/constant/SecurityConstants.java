@@ -12,7 +12,7 @@ public interface SecurityConstants {
 	/**
 	 * 前缀
 	 */
-	String IOC_PREFIX = "sparrowToken_";
+	String SPARROW_PREFIX = "sparrowToken_";
 	/**
 	 * 用户信息头
 	 */

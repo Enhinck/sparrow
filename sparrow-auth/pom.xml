@@ -7,12 +7,13 @@
 	<parent>
 		<groupId>com.enhinck</groupId>
 		<artifactId>sparrow</artifactId>
-		<version>${sparrow.version}</version>
+		<version>1.0.0</version>
 	</parent>
 	<artifactId>sparrow-auth</artifactId>
 	<packaging>jar</packaging>
 	<name>sparrow-auth</name>
 	<url>http://maven.apache.org</url>
+	<properties><sparrow.version>1.0.0</sparrow.version></properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

@@ -13,7 +13,7 @@ import com.enhinck.sparrow.auth.user.JwtUserFactory;
 import com.enhinck.sparrow.common.model.RoleVO;
 import com.enhinck.sparrow.common.model.UserVO;
 
-@Service("userDetailService")
+//@Service("userDetailService")
 public class JwtUserDetailsService implements UserDetailsService {
 
 	@SuppressWarnings("unused")

@@ -1,9 +1,13 @@
 package com.enhinck.sparrow.gateway.config;
 
+import com.enhinck.sparrow.common.constant.SecurityConstants;
+import com.enhinck.sparrow.common.oauth.SparrowRedisTokenStore;
+import com.enhinck.sparrow.gateway.handler.SecurityAuthenticationEntryPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configurers.ExpressionUrlAuthorizationConfigurer;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -13,6 +17,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Res
 import org.springframework.security.oauth2.provider.expression.OAuth2WebSecurityExpressionHandler;
 
 import com.enhinck.sparrow.gateway.handler.GatewayOauthTwoAccessDeniedHandler;
+import org.springframework.security.oauth2.provider.token.TokenStore;
 
 /**
  * 
@@ -39,11 +44,13 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
         registry.anyRequest()
                 .access("@permissionService.hasPermission(request,authentication)");
     }
-
+    @Autowired
+    SecurityAuthenticationEntryPoint securityAuthenticationEntryPoint;
     @Override
     public void configure(ResourceServerSecurityConfigurer resources) {
         resources.expressionHandler(expressionHandler);
         resources.accessDeniedHandler(gateWayOAuth2AccessDeniedHandler);
+        resources.authenticationEntryPoint(securityAuthenticationEntryPoint);
     }
 
     /**
@@ -67,5 +74,21 @@ public class ResourceServerConfiguration extends ResourceServerConfigurerAdapter
     @Bean
     public PasswordEncoder passwordEncoder(){
         return new NoneEncryptPasswordEncoder();
+    }
+
+    @Autowired
+    private RedisConnectionFactory redisConnectionFactory;
+    /**
+     * tokenstore 定制化处理
+     *
+     *  如果使用的 redis-cluster 模式请使用 IocRedisClusterTokenStore
+     * IocRedisClusterTokenStore tokenStore = new IocRedisClusterTokenStore();
+     * tokenStore.setRedisTemplate(redisTemplate);
+     */
+    @Bean
+    public TokenStore redisTokenStore() {
+        SparrowRedisTokenStore tokenStore = new SparrowRedisTokenStore(redisConnectionFactory);
+        tokenStore.setPrefix(SecurityConstants.SPARROW_PREFIX);
+        return tokenStore;
     }
 }

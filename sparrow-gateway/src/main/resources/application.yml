@@ -28,7 +28,12 @@ zuul:
     biz:
       path: /biz/**
       serviceId: sparrow-biz-demo
-      
+    proxy:
+      path: /proxy/**
+      serviceId: sparrow-proxy-demo
+    foos:
+      path: /foos/**
+      url: https://www.baidu.com/
 ribbon:
   eureka:
     enabled: true
