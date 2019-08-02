@@ -3,44 +3,47 @@ server:
 spring:
   profiles:
     active: dev
-  zipkin:
-    enabled: true
-  sleuth:
-    sampler:
-        percentage: 1
   #应用名称
   application:
     name: sparrow-auth
-  cloud:
-        #config服务配置
-    config:
-        username: admin
-        password: 123456
-        fail-fast: true
-          #重试间隔时间
-        retry:
-            initial-interval: 3000
-          #从注册中心获取配置服务，以及配置服务名称
-        discovery:
-          enabled: true
-          service-id: server-config
-# spring admin 访问无需验证
-management:
-   security:
-      enabled: false
-endpoints:
-   # 日志监控
-   logfile:
-      enabled: true
-      sensitive: false
-      external-file: /app/logs/${spring.application.name}/${spring.application.name}.log
-   # 关闭地址
-   shutdown:
-      enabled: true
-      sensitive: false #禁用密码验证
-   # 跨域允许方法
-   cors:
-      allowed-methods: HEAD,GET,POST
+feign:
+  httpclient:
+    enabled: false
+  okhttp:
+    enabled: true
 
-      
-      
+# 阿波罗配置
+apollo:
+  bootstrap:
+    enabled: true
+    namespaces: application,application.yml
+app:
+  id: sparrow
+
+ignore:
+  urls:
+    - /**/*swagger-ui*/**,
+    - /**/api-docs*/**
+    - /**/swagger-resources/**
+    - /swagger-ui.html
+    - /**/v2/**
+    - /**/webjars/**
+    - /health/**
+    - /env/**
+    - /metrics/**
+    - /trace/**
+    - /dump/**
+    - /jolokia/**
+    - /info/**
+    - /logfile/**
+    - /refresh/**
+    - /flyway/**
+    - /liquibase/**
+    - /heapdump/**
+    - /loggers/**
+    - /auditevents/**
+    - /autoconfig
+    - /configprops
+    - /beans
+    - /shutdown
+    - /mappings

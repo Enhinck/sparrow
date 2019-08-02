@@ -28,54 +28,13 @@ zuul:
     biz:
       path: /biz/**
       serviceId: sparrow-biz-demo
-    proxy:
-      path: /proxy/**
-      serviceId: sparrow-proxy-demo
     foos:
       path: /foos/**
       url: https://www.baidu.com/
-ribbon:
-  eureka:
-    enabled: true
-  ReadTimeout: 60000     #用来设置路由转发请求的超时时间
-  ConnectTimeout: 3000  #设置路由转发请求的时候，创建请求连接的超时时间
-  MaxAutoRetries: 0
-  MaxAutoRetriesNextServer: 1
-  OkToRetryOnAllOperations: false
-
-
-hystrix:
-  threadpool:
-    default:
-      coreSize: 1000 ##并发执行的最大线程数，默认10
-      maxQueueSize: 1000 ##BlockingQueue的最大队列数
-      queueSizeRejectionThreshold: 500 ##即使maxQueueSize没有达到，达到queueSizeRejectionThreshold该值后，请求也会被拒绝
-  command:
-    default:
-      execution:
-        timeout:
-          enabled: false
-        isolation:
-          thread:
-            timeoutInMilliseconds: 60000  #设置API网关中路由转发请求的HystrixCommand执行超时时间
 
 
 
 gate:
   ignore:
     startWith: /**/*swagger-ui*/**,/**/swagger-resources/**,/**/api-docs*/**,/static**
-
-endpoints:
-   # 日志监控
-   logfile:
-      enabled: true
-      sensitive: false
-      external-file: /app/logs/${spring.application.name}/${spring.application.name}.log
-   # 关闭地址
-   shutdown:
-      enabled: true
-      sensitive: false #禁用密码验证
-   # 跨域允许方法
-   cors:
-      allowed-methods: HEAD,GET,POST
     

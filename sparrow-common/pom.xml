@@ -16,11 +16,7 @@
 
 	<dependencies>
 		<!--配置中心 -->
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-config</artifactId>
-		</dependency>
-		
+
 		<dependency>
 			<groupId>de.codecentric</groupId>
 			<artifactId>spring-boot-admin-starter-client</artifactId>
@@ -75,13 +71,13 @@
 			<artifactId>hutool-all</artifactId>
 			<version>4.0.9</version>
 		</dependency>
-	</dependencies>
+    </dependencies>
 	<build>
 		<finalName>${project.name}</finalName>
 		<plugins>
 			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>

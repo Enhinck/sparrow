@@ -1,26 +1,2 @@
-eureka:
-  auth:
-    user: admin
-    password: 123456
-  client:
-    service-url:
-      defaultZone: http://${eureka.auth.user}:${eureka.auth.password}@127.0.0.1:8761/eureka/
-  instance:
-    prefer-ip-address: true
-    instance-id: ${spring.cloud.client.ipAddress}:${server.port}
-    lease-renewal-interval-in-seconds: 5
-    lease-expiration-duration-in-seconds: 10
-spring:
-  boot:
-    admin:
-      turbine:
-        clusters: default
-        url: http://localhost:8764/turbine.stream
-security:
-  user:
-    name: admin
-    password: 123456
-  basic:
-    enabled: false
-sendPhones: 18968001908,18768439095
-monitorServers: SC-AUTH,SC-USER,SC-GATEWAY
+apollo:
+  meta: http://192.168.159.128:8080

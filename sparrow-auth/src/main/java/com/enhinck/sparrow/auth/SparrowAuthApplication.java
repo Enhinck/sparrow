@@ -8,9 +8,10 @@ import org.springframework.context.annotation.ImportResource;
 
 @SpringBootApplication
 @ImportResource({"classpath*:applicationContext.xml"})
+
 public class SparrowAuthApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SparrowAuthApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SparrowAuthApplication.class, args);
+    }
 }
