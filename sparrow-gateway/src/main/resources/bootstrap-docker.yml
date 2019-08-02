@@ -1,0 +1,24 @@
+security:
+  user:
+    name: admin
+    password: 123456
+  auth:
+    server: http://${security.user.name}:${security.user.password}@sparrow-auth:8763
+  validate:
+    code: false
+    preview: false
+  sessions: stateless
+  oauth2:
+    client:
+      client-id: gateway
+      client-secret: gateway
+    resource:
+      loadBalanced: true
+      token-info-uri: ${security.auth.server}/oauth/check-token
+      service-id: sparrow-gateway
+      jwt:
+         key-uri: ${security.auth.server}/oauth/token_key #解析jwt令牌所需要密钥的地址
+
+apollo:
+  meta: http://apollo-quick-start:8080
+

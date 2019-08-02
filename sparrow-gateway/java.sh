@@ -1,0 +1,1 @@
+java   -jar  -Dspring.profiles.active=dev $1.jar
