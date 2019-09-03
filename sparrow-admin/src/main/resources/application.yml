@@ -11,8 +11,6 @@ spring:
         mail:
           to: huenbin@foxmail.com
           from: enhinck@163.com
-      discovery:
-        ignored-services: sparrow-config,sparrow-admin
   mail:
     host: smtp.163.com
     username: enhinck@163.com
@@ -37,3 +35,11 @@ security:
     enabled: false
 sendPhones: 18968001908,18768439095
 monitorServers: SC-AUTH,SC-USER,SC-GATEWAY
+
+# 阿波罗配置
+apollo:
+  bootstrap:
+    enabled: true
+    namespaces: application,application.yml
+app:
+  id: sparrow
